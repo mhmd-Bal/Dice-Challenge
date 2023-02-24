@@ -1,5 +1,6 @@
 const Title = document.getElementById("Title");
-const Dice = document.createElement("img");
+const Dice1 = document.createElement("img");
+const Dice2 = document.createElement("img");
 const Player1 = document.getElementById("Player1");
 const Player2 = document.getElementById("Player2");
 
@@ -21,40 +22,37 @@ function winner() {
     }
 }
 
-function assignImage(Dice_number) {
+function assignDice(Dice, Dice_number, Player) {
     switch (Dice_number){
         case 1:
-            Dice.src = URL("Images/1.png");
+            Dice.src = "Images/1.png";
             break;
         case 2:
-            Dice.src = "Image/2.png";
+            Dice.src = "Images/2.png";
             break;
         case 3:
-            Dice.src = "Image/3.png";
+            Dice.src = "Images/3.png";
             break;
         case 4:
-            Dice.src = "Image/4.png";
+            Dice.src = "Images/4.png";
             break;
         case 5:
-            Dice.src = "Image/5.png";
+            Dice.src = "Images/5.png";
             break;
         case 6:
-            Dice.src = "Image/6.png";
+            Dice.src = "Images/6.png";
             break;
     }
-    Player1.appendChild(Dice);
+    Dice.style.width = "100px";
+    Player.appendChild(Dice);
 }
 
-function assignToPlayer(player) {
-    player.appendChild(Dice);
-}
+
 
 function start(){
     winner();
-    assignImage(Dice1_number);
-    assignToPlayer(Player1);
-    assignImage(Dice2_number);
-    assignToPlayer(Player2);
+    assignDice(Dice1, Dice1_number, Player1);
+    assignDice(Dice2, Dice2_number, Player2);
 }
 
 
